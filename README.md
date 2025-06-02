@@ -10,17 +10,20 @@ A modern, responsive React application for movie enthusiasts to search, discover
 ## ✨ Features
 
 ### 🎬 Movie Discovery
+
 - **Real-time Search**: Search through thousands of movies using the OMDB API
 - **Instant Results**: Get immediate feedback with loading states and error handling
 - **Movie Details**: View comprehensive information including plot, cast, director, and ratings
 
 ### ⭐ Rating & Watchlist Management
+
 - **Interactive Star Rating**: Custom-built star rating component with smooth animations
 - **Personal Watchlist**: Add movies to your personal watched list with custom ratings
 - **Local Storage**: Persistent data storage - your watchlist survives browser sessions
 - **Statistics Dashboard**: Track your viewing habits with automatic calculations
 
 ### 🎯 User Experience
+
 - **Keyboard Navigation**: Press Enter to focus search, Escape to close details
 - **Responsive Design**: Beautiful UI that works on all device sizes
 - **Dark Theme**: Modern dark theme with custom CSS variables
@@ -29,23 +32,27 @@ A modern, responsive React application for movie enthusiasts to search, discover
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js (v14 or higher)
 - npm or yarn
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/yourusername/usepopcorn.git
    cd usepopcorn
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start the development server**
+
    ```bash
    npm start
    ```
@@ -70,26 +77,32 @@ src/
 ## 🔧 Custom Hooks
 
 ### `useMovies(query)`
+
 Handles movie searching with automatic debouncing and error management.
 
 **Features:**
+
 - Automatic API calls when query changes
 - Loading states
 - Error handling
 - Request cancellation
 
 ### `useLocalStorageState(initialState, key)`
+
 Provides persistent state management using localStorage.
 
 **Features:**
+
 - Automatic synchronization with localStorage
 - JSON serialization/deserialization
 - Fallback to initial state
 
 ### `useKey(key, action)`
+
 Manages keyboard event listeners for enhanced UX.
 
 **Features:**
+
 - Global keyboard shortcuts
 - Automatic cleanup
 - Customizable key bindings
@@ -97,6 +110,7 @@ Manages keyboard event listeners for enhanced UX.
 ## 🎨 Component Architecture
 
 ### Core Components
+
 - **App**: Main application container with state management
 - **NavBar**: Navigation with search and results counter
 - **MovieList**: Displays search results with poster previews
@@ -104,6 +118,7 @@ Manages keyboard event listeners for enhanced UX.
 - **WatchedSummary**: Statistics dashboard for watched movies
 
 ### Reusable Components
+
 - **StarRating**: Configurable star rating with PropTypes validation
 - **Box**: Collapsible container with toggle functionality
 - **Loader**: Loading state indicator
@@ -111,18 +126,21 @@ Manages keyboard event listeners for enhanced UX.
 ## 🎯 Key Features Implementation
 
 ### Movie Search & Display
+
 ```javascript
 // Real-time search with error handling
 const { movies, isLoading, error } = useMovies(query);
 ```
 
 ### Persistent Watchlist
+
 ```javascript
 // Automatic localStorage synchronization
 const [watched, setWatched] = useLocalStorageState([], "watched");
 ```
 
 ### Keyboard Shortcuts
+
 ```javascript
 // Global keyboard event handling
 useKey("Escape", onCloseMovie);
@@ -131,16 +149,17 @@ useKey("Enter", focusSearchInput);
 
 ## 🛠️ Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm start` | Start development server at http://localhost:3000 |
-| `npm test` | Run test suite in interactive watch mode |
-| `npm run build` | Create optimized production build |
-| `npm run eject` | Eject from Create React App (⚠️ irreversible) |
+| Command         | Description                                       |
+| --------------- | ------------------------------------------------- |
+| `npm start`     | Start development server at http://localhost:3000 |
+| `npm test`      | Run test suite in interactive watch mode          |
+| `npm run build` | Create optimized production build                 |
+| `npm run eject` | Eject from Create React App (⚠️ irreversible)     |
 
 ## 🌟 API Integration
 
 This application uses the [OMDB API](http://www.omdbapi.com/) for movie data:
+
 - Search functionality
 - Detailed movie information
 - Poster images
@@ -149,12 +168,14 @@ This application uses the [OMDB API](http://www.omdbapi.com/) for movie data:
 ## 🎨 Design System
 
 ### Color Palette
+
 - **Primary**: `#6741d9` (Purple)
 - **Background**: `#212529` (Dark gray)
 - **Text**: `#dee2e6` (Light gray)
 - **Accent**: `#fa5252` (Red for delete actions)
 
 ### Typography
+
 - **Font Family**: System fonts for optimal performance
 - **Font Sizes**: Responsive scale from 1.4rem to 3.2rem
 - **Font Weights**: 400, 600, and bold variants
