@@ -123,28 +123,6 @@ Manages keyboard event listeners for enhanced UX.
 - **Box**: Collapsible container with toggle functionality
 - **Loader**: Loading state indicator
 
-## 🎯 Key Features Implementation
-
-### Movie Search & Display
-
-```javascript
-// Real-time search with error handling
-const { movies, isLoading, error } = useMovies(query);
-```
-
-### Persistent Watchlist
-
-```javascript
-// Automatic localStorage synchronization
-const [watched, setWatched] = useLocalStorageState([], "watched");
-```
-
-### Keyboard Shortcuts
-
-```javascript
-// Global keyboard event handling
-useKey("Escape", onCloseMovie);
-useKey("Enter", focusSearchInput);
 ```
 
 ## 🛠️ Available Scripts
@@ -228,3 +206,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
