@@ -2,10 +2,34 @@
 
 A modern, responsive React application for movie enthusiasts to search, discover, and manage their movie watchlists with an intuitive rating system.
 
+> **📚 Learning Project**: This application was built as part of Jonas Schmedtmann's ["The Ultimate React Course 2024"](https://www.udemy.com/course/the-ultimate-react-course/) on Udemy. It demonstrates modern React concepts including custom hooks, state management, API integration, and component composition.
+
 ![React](https://img.shields.io/badge/React-19.1.0-blue?logo=react)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript)
 ![CSS3](https://img.shields.io/badge/CSS3-Modern-blue?logo=css3)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
+## 📚 Learning Objectives
+
+This project was developed as part of **Jonas Schmedtmann's "The Ultimate React Course 2024"** and demonstrates mastery of:
+
+### React Fundamentals
+- ⚛️ **Component Composition**: Building reusable, composable components
+- 🎣 **Hooks Mastery**: Using useState, useEffect, useRef with best practices
+- 🔄 **State Management**: Managing complex state across multiple components
+- 🎯 **Event Handling**: Keyboard events, click handlers, and form interactions
+
+### Advanced React Patterns
+- 🛠️ **Custom Hooks**: Creating reusable logic with `useMovies`, `useLocalStorageState`, `useKey`
+- 📡 **API Integration**: Fetching data from external APIs with proper error handling
+- 💾 **Data Persistence**: Using localStorage for client-side data storage
+- 🔍 **Search Implementation**: Real-time search with debouncing and request cancellation
+
+### Performance & Best Practices
+- ⚡ **Performance Optimization**: Preventing unnecessary re-renders
+- 🧹 **Cleanup Functions**: Proper cleanup of side effects and event listeners
+- 🎨 **Modern CSS**: CSS custom properties, responsive design, and dark theming
+- 📝 **Code Organization**: Clean component architecture and separation of concerns
 
 ## ✨ Features
 
@@ -31,10 +55,13 @@ A modern, responsive React application for movie enthusiasts to search, discover
 
 ## 🚀 Quick Start
 
+> **Note**: This is a learning project from Jonas Schmedtmann's React course. Feel free to clone and experiment!
+
 ### Prerequisites
 
 - Node.js (v14 or higher)
 - npm or yarn
+- Basic understanding of React concepts
 
 ### Installation
 
@@ -165,13 +192,28 @@ This application uses the [OMDB API](http://www.omdbapi.com/) for movie data:
 - **CSS Variables**: Efficient styling with custom properties
 - **Minimal Re-renders**: Optimized state management
 
-## 🤝 Contributing
+## 🤝 Contributing & Learning
 
+This is a learning project, but contributions and improvements are welcome! If you're also taking the course or learning React:
+
+### For Course Students
+- Share your own implementations and variations
+- Suggest improvements or additional features
+- Help other students understand concepts
+
+### For Contributors
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+### 💡 Ideas for Extension
+- Add movie recommendations
+- Implement user authentication
+- Add social features (sharing watchlists)
+- Connect to additional movie APIs
+- Add movie trailers integration
 
 ## 📝 License
 
@@ -185,7 +227,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Built with ❤️ and React**
+**🎯 Built for Learning | Part of Jonas Schmedtmann's React Course**
 
 ### Analyzing the Bundle Size
 
