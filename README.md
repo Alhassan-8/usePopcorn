@@ -1,53 +1,192 @@
-# Getting Started with Create React App
+# 🍿 usePopcorn
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive React application for movie enthusiasts to search, discover, and manage their movie watchlists with an intuitive rating system.
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-19.1.0-blue?logo=react)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript)
+![CSS3](https://img.shields.io/badge/CSS3-Modern-blue?logo=css3)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+### 🎬 Movie Discovery
+- **Real-time Search**: Search through thousands of movies using the OMDB API
+- **Instant Results**: Get immediate feedback with loading states and error handling
+- **Movie Details**: View comprehensive information including plot, cast, director, and ratings
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ⭐ Rating & Watchlist Management
+- **Interactive Star Rating**: Custom-built star rating component with smooth animations
+- **Personal Watchlist**: Add movies to your personal watched list with custom ratings
+- **Local Storage**: Persistent data storage - your watchlist survives browser sessions
+- **Statistics Dashboard**: Track your viewing habits with automatic calculations
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🎯 User Experience
+- **Keyboard Navigation**: Press Enter to focus search, Escape to close details
+- **Responsive Design**: Beautiful UI that works on all device sizes
+- **Dark Theme**: Modern dark theme with custom CSS variables
+- **Smooth Animations**: Polished transitions and hover effects
 
-### `npm test`
+## 🚀 Quick Start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/usepopcorn.git
+   cd usepopcorn
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Start the development server**
+   ```bash
+   npm start
+   ```
 
-### `npm run eject`
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🏗️ Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+src/
+├── App.js                 # Main application component
+├── App.css               # Application styles
+├── index.css             # Global styles and CSS variables
+├── starRating.js         # Reusable star rating component
+├── useMovies.js          # Custom hook for movie API calls
+├── useLocalStorageState.js # Custom hook for localStorage
+├── useKey.js             # Custom hook for keyboard events
+└── index.js              # Application entry point
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🔧 Custom Hooks
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### `useMovies(query)`
+Handles movie searching with automatic debouncing and error management.
 
-## Learn More
+**Features:**
+- Automatic API calls when query changes
+- Loading states
+- Error handling
+- Request cancellation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `useLocalStorageState(initialState, key)`
+Provides persistent state management using localStorage.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Features:**
+- Automatic synchronization with localStorage
+- JSON serialization/deserialization
+- Fallback to initial state
 
-### Code Splitting
+### `useKey(key, action)`
+Manages keyboard event listeners for enhanced UX.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Features:**
+- Global keyboard shortcuts
+- Automatic cleanup
+- Customizable key bindings
+
+## 🎨 Component Architecture
+
+### Core Components
+- **App**: Main application container with state management
+- **NavBar**: Navigation with search and results counter
+- **MovieList**: Displays search results with poster previews
+- **MovieDetails**: Detailed movie view with rating functionality
+- **WatchedSummary**: Statistics dashboard for watched movies
+
+### Reusable Components
+- **StarRating**: Configurable star rating with PropTypes validation
+- **Box**: Collapsible container with toggle functionality
+- **Loader**: Loading state indicator
+
+## 🎯 Key Features Implementation
+
+### Movie Search & Display
+```javascript
+// Real-time search with error handling
+const { movies, isLoading, error } = useMovies(query);
+```
+
+### Persistent Watchlist
+```javascript
+// Automatic localStorage synchronization
+const [watched, setWatched] = useLocalStorageState([], "watched");
+```
+
+### Keyboard Shortcuts
+```javascript
+// Global keyboard event handling
+useKey("Escape", onCloseMovie);
+useKey("Enter", focusSearchInput);
+```
+
+## 🛠️ Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm start` | Start development server at http://localhost:3000 |
+| `npm test` | Run test suite in interactive watch mode |
+| `npm run build` | Create optimized production build |
+| `npm run eject` | Eject from Create React App (⚠️ irreversible) |
+
+## 🌟 API Integration
+
+This application uses the [OMDB API](http://www.omdbapi.com/) for movie data:
+- Search functionality
+- Detailed movie information
+- Poster images
+- Ratings and metadata
+
+## 🎨 Design System
+
+### Color Palette
+- **Primary**: `#6741d9` (Purple)
+- **Background**: `#212529` (Dark gray)
+- **Text**: `#dee2e6` (Light gray)
+- **Accent**: `#fa5252` (Red for delete actions)
+
+### Typography
+- **Font Family**: System fonts for optimal performance
+- **Font Sizes**: Responsive scale from 1.4rem to 3.2rem
+- **Font Weights**: 400, 600, and bold variants
+
+## 🚀 Performance Optimizations
+
+- **Request Cancellation**: Prevents race conditions in API calls
+- **Local Storage**: Reduces API calls for user data
+- **CSS Variables**: Efficient styling with custom properties
+- **Minimal Re-renders**: Optimized state management
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [OMDB API](http://www.omdbapi.com/) for movie data
+- [Create React App](https://create-react-app.dev/) for the initial setup
+- React team for the amazing framework
+
+---
+
+**Built with ❤️ and React**
 
 ### Analyzing the Bundle Size
 
